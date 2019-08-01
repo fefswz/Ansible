@@ -49,7 +49,7 @@ ansible是自动化运维工具
 
 ### 1.安装python2.7
 
-官网安装包网址：(https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz)
+官网安装包网址：https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
 
 下载完后开始解压，配置
 
@@ -141,4 +141,4 @@ vi /usr/libexec/urlgrabber-ext-down
 
 ### 2.安装setuptools模块
 
-官网模块网址：(https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz)
+官网模块网址：https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz
