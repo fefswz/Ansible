@@ -65,3 +65,37 @@ ansible是自动化运维工具
 [root@192 Python-2.7.8]# make && make install
 ```
 
+注意：将python头文件拷贝到标准目录，以避免编译ansible时，找不到所需的头文件
+
+```bash
+[root@192 Python-2.7.8]# cd /usr/local/include/python2.7/
+[root@192 python2.7]# cp -a ./* /usr/local/include/
+```
+
+接下来对旧版本的python做个备份，并符号链接到新版本的python
+
+查看旧版本：
+
+可以看到旧版本为2.7.5
+
+```bash
+
+[root@192 ~]# python -V
+Python 2.7.5
+
+[root@192 ~]# cd /usr/bin/
+[root@192 bin]# mv python python2.7.5
+[root@192 bin]# ln -s /usr/local/bin/python
+```
+
+接下来修改yum脚本，使其指向旧版本的python2.7.5，已避免其无法运行
+
+```bash
+[root@192 ~]# vim /usr/bin/yum
+```
+
+yum脚本内容：
+
+主要修改红颜色的部分
+
+#！/usr/bin/python2.7.5 
