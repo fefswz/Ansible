@@ -49,7 +49,7 @@ ansible是自动化运维工具
 
 ### 1.安装python2.7
 
-官网安装包网址：[下载地址](https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz)
+官网安装包网址：(https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz)
 
 下载完后开始解压，配置
 
@@ -99,3 +99,46 @@ yum脚本内容：
 主要修改红颜色的部分
 
 #！/usr/bin/python2.7.5 
+
+```bash
+#!/usr/bin/python2.7.5
+import sys
+try:    
+    import yum
+except ImportError:    
+    print >> sys.stderr, """\
+There was a problem importing one of the Python modules
+required to run yum. The error leading to this problem was:
+```
+
+保存退出，检查一下yum源看是否能正常使用。
+
+```bash
+[root@192 ~]# yum list
+```
+
+发现执行yum list命令卡主不动了，报了一堆错误，那是因为还有一个配置文件和没有修改
+
+就是这个配置文件：
+
+```bash
+vi /usr/libexec/urlgrabber-ext-down
+```
+
+进去修改一致即可：
+
+```bash
+#! /usr/bin/python2.7.5
+#  A very simple external downloader
+#  Copyright 2011-2012 Zdenek Pavlas 
+#   This library is free software; you can redistribute it and/or
+#   modify it under the terms of the GNU Lesser General Public
+```
+
+这次yum就可以正常使用了！！！
+
+安装完了python环境，那么接下来就要安装ansible所需要的功能模块了。他们都是基于python提供的
+
+### 2.安装setuptools模块
+
+官网模块网址：(https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz)
