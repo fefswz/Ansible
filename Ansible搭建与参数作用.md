@@ -51,3 +51,17 @@ ansible是自动化运维工具
 
 官网安装包网址：[下载地址](https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz)
 
+下载完后开始解压，配置
+
+```bash
+# tar xvzf Python-2.7.8.tgz
+# cd Python-2.7.8
+# ./configure --prefix=/usr/local
+```
+
+编译安装python
+
+```bash
+[root@192 Python-2.7.8]# make && make install
+```
+
