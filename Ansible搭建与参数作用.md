@@ -36,3 +36,18 @@ ansible是自动化运维工具
 (4)、支持sudo。
 
 ### ansible的运行过程：
+
+![ansible的运行过程](/pics/20180904142014762.jpg)
+
+### 接下来就开始正式安装ansible了
+
+### 实验环境：
+
+### Centos7.2系统为例
+
+### 在安装之前我们要，首先安装python环境，为什么呢？因为之前有提到过ansible是基于python语言开发的，所以ansible的所有功能都是通过python模块来实现的。
+
+### 1.安装python2.7
+
+官网安装包网址：[下载地址](https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz)
+
